@@ -1,14 +1,91 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      AXEL NOTES
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="mostrarCategorias">
+    <p>
+      <button ion-button round outline color="#61d2b4" (click)="abrirSubcategorias('apontamentos')">
+        APONTAMENTOS
+      </button>
+    </p>
+
+    <p>
+      <button ion-button round outline color="#61d2b4" (click)="abrirSubcategorias('ideias')">
+        IDEIAS PESSOAIS
+      </button>
+    </p>
+
+    <p>
+      <button ion-button round outline color="#61d2b4" (click)="abrirSubcategorias('outros')">
+        OUTRAS NOTAS
+      </button>
+    </p>
+  </div>
+
+  <div *ngIf="mostrarSubcategorias">
+    <div *ngIf="subcategorias.apontamentos">
+      <span>
+        <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+        VER APONTAMENTOS
+      </span>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('gerais')">
+          GERAIS
+        </button>
+      </p>
+  
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('estudantis')">
+          ESTUDANTIL
+        </button>
+      </p>
+  
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('biblia')">
+          BÍBLIA
+        </button>
+      </p>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('pregacoes')">
+          PREGAÇÕES
+        </button>
+      </p>
+  
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('leitura')">
+          LEITURA
+        </button>
+      </p>
+  
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirApontamentos('coaching')">
+          COACHING
+        </button>
+      </p>
+    </div> 
+
+    <!-- ideias -->
+    <div *ngIf="subcategorias.ideias">
+      <span>
+        <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+        VER IDEIAS PESSOAIS
+      </span>
+    </div>
+
+    <!-- outras -->
+    <div *ngIf="subcategorias.outros">
+        <span>
+          <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+          VER NOTAS EXTRAS
+        </span>
+      </div>
+  </div>
+  
 </ion-content>
