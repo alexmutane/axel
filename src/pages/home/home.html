@@ -28,9 +28,10 @@
   </div>
 
   <div *ngIf="mostrarSubcategorias">
+    <!-- apontamentos -->
     <div *ngIf="subcategorias.apontamentos">
       <span>
-        <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+        <ion-icon name="arrow-round-back" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
         VER APONTAMENTOS
       </span>
 
@@ -74,18 +75,67 @@
     <!-- ideias -->
     <div *ngIf="subcategorias.ideias">
       <span>
-        <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+        <ion-icon name="arrow-round-back" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
         VER IDEIAS PESSOAIS
       </span>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirIdeias('projectos')">
+          PROJECTOS
+        </button>
+      </p>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirIdeias('ebooks')">
+          EBOOKS
+        </button>
+      </p>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirIdeias('pesquisar')">
+          ASSUNTOS POR PESQUISAR
+        </button>
+      </p>
+
+      <p>
+        <button ion-button round outline color="#61d2b4" (click)="abrirIdeias('refletir')">
+          COISAS POR REFLETIR
+        </button>
+      </p>
+
     </div>
 
     <!-- outras -->
     <div *ngIf="subcategorias.outros">
         <span>
-          <ion-icon name="alert" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
+          <ion-icon name="arrow-round-back" (click)="listarCategorias()"></ion-icon>&nbsp;&nbsp;
           VER NOTAS EXTRAS
         </span>
-      </div>
+
+        <p>
+          <button ion-button round outline color="#61d2b4" (click)="abrirExtras('videos')">
+            VIDEOS POR GRAVAR
+          </button>
+        </p>
+
+        <p>
+          <button ion-button round outline color="#61d2b4" (click)="abrirExtras('artigos')">
+            ARTIGOS POR POSTAR
+          </button>
+        </p>
+
+        <p>
+          <button ion-button round outline color="#61d2b4" (click)="abrirExtras('frases')">
+            FRASES QUE ME MARCAM
+          </button>
+        </p>
+
+        <p>
+          <button ion-button round outline color="#61d2b4" (click)="abrirExtras('links')">
+            LINKS IMPORTANTES
+          </button>
+        </p>
+    </div>
   </div>
   
 </ion-content>

@@ -54,4 +54,16 @@ export class HomePage {
     this.mostrarSubcategorias = false;
   }
 
+  abrirApontamentos(topico:string){
+    //....
+  }
+
+  abrirIdeias(topico:string){
+    //...
+  }
+
+  abrirExtras(topico:string){
+    //...
+  }
+
 }
